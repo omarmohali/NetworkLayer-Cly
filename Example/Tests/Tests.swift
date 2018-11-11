@@ -1,5 +1,5 @@
 import XCTest
-import NetworkLayer-Cly
+import NetworkLayer_Cly
 
 class Tests: XCTestCase {
     

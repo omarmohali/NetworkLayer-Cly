@@ -18,5 +18,13 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "NetworkLayer-Cly/Classes/**/*"
+  "source_files": "NetworkLayer-Cly/Classes/**/*",
+  "dependencies": {
+    "Alamofire": [
+
+    ],
+    "ObjectMapper": [
+
+    ]
+  }
 }

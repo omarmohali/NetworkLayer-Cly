@@ -1,5 +1,9 @@
 PODS:
-  - NetworkLayer-Cly (0.1.0)
+  - Alamofire (4.7.3)
+  - NetworkLayer-Cly (0.1.0):
+    - Alamofire
+    - ObjectMapper
+  - ObjectMapper (3.3.0)
 
 DEPENDENCIES:
   - NetworkLayer-Cly (from `../`)
@@ -9,8 +13,10 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  NetworkLayer-Cly: a66cb49e440779473f2ee27206a34d96d00d36c6
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  NetworkLayer-Cly: a0234a78958cd01be98941d5d66bac37e6599089
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
 
-PODFILE CHECKSUM: 5cf64bcbbe4c0ae4dd9e41f9481a7e4d0bf5917c
+PODFILE CHECKSUM: 597bf17ab9ab21b3455f827e0b86ecf257f29f58
 
 COCOAPODS: 1.4.0
