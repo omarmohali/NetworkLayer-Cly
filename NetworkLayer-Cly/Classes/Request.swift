@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 import Alamofire
 
-class Request<T> {
+open class Request<T> {
     
     let httpMedthod: HTTPMethod
     let url: String
@@ -18,16 +18,16 @@ class Request<T> {
     let bodyParameters: [String: Any]?
     let headers: [String: String]?
     
-    init(url: String, method: HTTPMethod, headers: [String: String]?, urlParameters: [String: String]?, bodyParameters: [String: Any]?) {
-//        self.url = "\(APIConstants.BASE_URL)\(url)"
-        self.url = url
+    public init(url: String, method: HTTPMethod, headers: [String: String]?, urlParameters: [String: String]?, bodyParameters: [String: Any]?) {
+        self.url = "\(NetworkLayerSettings.baseUrl ?? "")\(url)"
+//        self.url = url
         self.httpMedthod = method
         self.headers = headers
         self.urlParameters = urlParameters
         self.bodyParameters = bodyParameters
     }
     
-    init(customUrl: String, method: HTTPMethod, headers: [String: String]?, urlParameters: [String: String]?, bodyParameters: [String: Any]?) {
+    public init(customUrl: String, method: HTTPMethod, headers: [String: String]?, urlParameters: [String: String]?, bodyParameters: [String: Any]?) {
         self.url = customUrl
         self.httpMedthod = method
         self.headers = headers
@@ -35,11 +35,11 @@ class Request<T> {
         self.bodyParameters = bodyParameters
     }
     
-    func execute(onSuccess: @escaping ((T) -> Void), onFailure: ((APIError) -> Void)? = nil) {
+    open func execute(onSuccess: @escaping ((T) -> Void), onFailure: ((APIError) -> Void)? = nil) {
         fatalError("This method must be overriden")
     }
     
-    func executeHelper(onSuccess: @escaping ((Any) -> Void), onFailure: ((APIError) -> Void)? = nil) {
+    public func executeHelper(onSuccess: @escaping ((Any) -> Void), onFailure: ((APIError) -> Void)? = nil) {
         
         switch httpMedthod {
         case .GET:
@@ -176,12 +176,12 @@ class Request<T> {
     
 }
 
-enum HTTPMethod: Error {
+public enum HTTPMethod: Error {
     case GET
     case POST
 }
 
-enum APIError: Error {
+public enum APIError: Error {
     case invalidUrl
     case notJson
     case responseError(status: Int?, message: String)
@@ -191,13 +191,21 @@ enum APIError: Error {
 
 
 
-struct FileInfo<T> {
+public struct FileInfo<T> {
+    
     let type: FileType
     let data: T
+    
+    public init(type: FileType, data: T) {
+        self.type = type
+        self.data = data
+    }
+    
+    
 }
 
 
-enum FileType {
+public enum FileType {
     case image
     case images
     case video

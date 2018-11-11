@@ -9,9 +9,9 @@
 import Foundation
 import ObjectMapper
 
-class RequestWithObjectResponse<T: Mappable>: Request<T> {
+open class RequestWithObjectResponse<T: Mappable>: Request<T> {
     
-    override func execute(onSuccess: @escaping ((T) -> Void), onFailure: ((APIError) -> Void)?) {
+    override open func execute(onSuccess: @escaping ((T) -> Void), onFailure: ((APIError) -> Void)?) {
         super.executeHelper(onSuccess: {
             responseObject in
             
@@ -30,9 +30,9 @@ class RequestWithObjectResponse<T: Mappable>: Request<T> {
 }
 
 
-class RequestWithArrayResponse<T: Mappable>: Request<[T]> {
+open class RequestWithArrayResponse<T: Mappable>: Request<[T]> {
     
-    override func execute(onSuccess: @escaping (([T]) -> Void), onFailure: ((APIError) -> Void)?) {
+    override open func execute(onSuccess: @escaping (([T]) -> Void), onFailure: ((APIError) -> Void)?) {
         
         super.executeHelper(onSuccess: {
             responseObject in
@@ -53,10 +53,10 @@ class RequestWithArrayResponse<T: Mappable>: Request<[T]> {
     }
 }
 
-class RequestWithAnyResponse: Request<Any> {
+open class RequestWithAnyResponse: Request<Any> {
 
 
-    override func execute(onSuccess: @escaping ((Any) -> Void), onFailure: ((APIError) -> Void)?) {
+    override open func execute(onSuccess: @escaping ((Any) -> Void), onFailure: ((APIError) -> Void)?) {
 
         super.executeHelper(onSuccess: {
             responseObject in
