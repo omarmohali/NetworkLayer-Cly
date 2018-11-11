@@ -1,0 +1,16 @@
+PODS:
+  - NetworkLayer-Cly (0.1.0)
+
+DEPENDENCIES:
+  - NetworkLayer-Cly (from `../`)
+
+EXTERNAL SOURCES:
+  NetworkLayer-Cly:
+    :path: ../
+
+SPEC CHECKSUMS:
+  NetworkLayer-Cly: a66cb49e440779473f2ee27206a34d96d00d36c6
+
+PODFILE CHECKSUM: 5cf64bcbbe4c0ae4dd9e41f9481a7e4d0bf5917c
+
+COCOAPODS: 1.4.0

@@ -1,0 +1,22 @@
+{
+  "name": "NetworkLayer-Cly",
+  "version": "0.1.0",
+  "summary": "A short description of NetworkLayer-Cly.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/omarmohali/NetworkLayer-Cly",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "omarmohali": "omar.moh.aly@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/omarmohali/NetworkLayer-Cly.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "NetworkLayer-Cly/Classes/**/*"
+}
