@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NetworkLayer-Cly'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'A short description of NetworkLayer-Cly.'
 
 # This description is used to generate tags and improve search results.
@@ -26,18 +26,11 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'omarmohali' => 'omar.moh.aly@gmail.com' }
   s.source           = { :git => 'https://github.com/omarmohali/NetworkLayer-Cly.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'NetworkLayer-Cly/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'NetworkLayer-Cly' => ['NetworkLayer-Cly/Assets/*.png']
-  # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
     s.dependency 'Alamofire'
     s.dependency 'ObjectMapper'
 end
