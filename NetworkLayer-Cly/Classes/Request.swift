@@ -182,7 +182,27 @@ open class Request<T> {
     
     private func executePostRequest(onSuccess: @escaping ((Any) -> Void), onFailure: ((APIError) -> Void)? = nil) {
         
+        guard let url = URL(string: urlWithParameters) else {
+            onFailure?(.invalidUrl)
+            return
+        }
+
         
+        Alamofire.request(url, method: .post, parameters: bodyParameters, encoding: JSONEncoding.default, headers: headers).responseJSON(completionHandler: {
+            response in
+            
+            if let _ = response.error {
+                onFailure?(.unknown)
+            }
+            else {
+                if let response = response.result.value {
+                    onSuccess(response)
+                }
+                else {
+                    onFailure?(.unknown)
+                }
+            }
+        })
         
     }
     
