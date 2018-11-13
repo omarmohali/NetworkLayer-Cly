@@ -20,7 +20,6 @@ open class Request<T> {
     
     public init(url: String, method: HTTPMethod, headers: [String: String]?, urlParameters: [String: String]?, bodyParameters: [String: Any]?) {
         self.url = "\(NetworkLayerSettings.baseUrl ?? "")\(url)"
-//        self.url = url
         self.httpMedthod = method
         self.headers = headers
         self.urlParameters = urlParameters
@@ -44,6 +43,15 @@ open class Request<T> {
         switch httpMedthod {
         case .GET:
             executeGetRequest(onSuccess: {
+                response in
+                onSuccess(response)
+            }, onFailure: {
+                error in
+                onFailure?(error)
+            })
+            break
+        case .POST_MULTIPART:
+            executeMultipartPostRequest(onSuccess: {
                 response in
                 onSuccess(response)
             }, onFailure: {
@@ -107,7 +115,7 @@ open class Request<T> {
     }
     
     
-    private func executePostRequest(onSuccess: @escaping ((Any) -> Void), onFailure: ((APIError) -> Void)? = nil) {
+    private func executeMultipartPostRequest(onSuccess: @escaping ((Any) -> Void), onFailure: ((APIError) -> Void)? = nil) {
     
         Alamofire.upload(multipartFormData: {
             multipartData in
@@ -172,6 +180,13 @@ open class Request<T> {
         
     }
     
+    private func executePostRequest(onSuccess: @escaping ((Any) -> Void), onFailure: ((APIError) -> Void)? = nil) {
+        
+        
+        
+    }
+    
+    
     
     
 }
@@ -179,6 +194,8 @@ open class Request<T> {
 public enum HTTPMethod: Error {
     case GET
     case POST
+    case POST_MULTIPART
+
 }
 
 public enum APIError: Error {
