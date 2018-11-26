@@ -98,7 +98,7 @@ open class Request<T> {
         
         Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON(completionHandler: {
             response in
-
+        
             if let _ = response.error {
                 onFailure?(.unknown)
             }
