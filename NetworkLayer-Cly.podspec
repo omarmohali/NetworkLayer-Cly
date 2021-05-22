@@ -32,6 +32,6 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'NetworkLayer-Cly/Classes/**/*'
 
-    s.dependency 'Alamofire'
-    s.dependency 'ObjectMapper'
+    s.dependency 'Alamofire', '~> 4.9.1'
+    s.dependency 'ObjectMapper', '~> 3.5.1'
 end

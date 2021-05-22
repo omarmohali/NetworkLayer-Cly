@@ -96,6 +96,8 @@ open class Request<T> {
             return
         }
         
+        
+        
         Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON(completionHandler: {
             response in
         
