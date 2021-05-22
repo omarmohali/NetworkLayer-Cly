@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NetworkLayer-Cly'
-  s.version          = '1.1.0'
+  s.version          = '1.1.1'
   s.summary          = 'A wrapper around Alamofire and ObjectMapper to create request objects'
   s.swift_version    = '4.2'
 
@@ -28,7 +28,7 @@ TODO: Add long description of the pod here.
   s.author           = { 'omarmohali' => 'omar.moh.aly@gmail.com' }
   s.source           = { :git => 'https://github.com/omarmohali/NetworkLayer-Cly.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'NetworkLayer-Cly/Classes/**/*'
 
