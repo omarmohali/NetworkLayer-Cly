@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NetworkLayer-Cly'
-  s.version          = '1.1.1'
+  s.version          = '1.1.3'
   s.summary          = 'A wrapper around Alamofire and ObjectMapper to create request objects'
   s.swift_version    = '4.2'
 
